@@ -32,18 +32,19 @@ plt.show()
 ### visualization code (prettyPicture) to show you the decision boundary
 
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
-'''
-clf = KNeighborsClassifier(n_neighbors=9, algorithm='ball_tree')
+clf = KNeighborsClassifier(n_neighbors=1, algorithm='ball_tree')
+
+#clf = RandomForestClassifier(min_samples_split=10, n_estimators=40)
+
+
 clf.fit(features_train, labels_train)
 
 pred = clf.predict(features_test)
 accuracy = accuracy_score(labels_test, pred)
 print ('Accuracy kNearestNeighbors:', accuracy)
-'''
-
-
 
 
 
