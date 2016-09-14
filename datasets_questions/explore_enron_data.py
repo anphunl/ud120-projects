@@ -16,9 +16,14 @@
 """
 
 import pickle
+import sys
 
-enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
+version = sys.version_info.major
 
+if version == 3:
+    enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "rb"))
+else:
+    enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
 print ("Number of people:", len(enron_data))
 print ("Number of features:", len(enron_data['GARLAND C KEVIN']))
